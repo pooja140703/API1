@@ -9,9 +9,17 @@ import io
 app = Flask(__name__)
 
 # Load your classification model
-classifier_model = tf.keras.models.load_model('model/cnn_pose_classifier.h5')
-class_labels = ["adho_mukh_svanasana", "ashtanga_namaskara", "bhujangasana", "chaturanga_dandasana", "dandasana"]
-
+classifier_model =  tf.keras.models.load_model("cnn_pose_classifier.h5")
+class_labels = [
+    "adho mukh svanasana",
+    "ashtanga namaskara",
+    "ashwa sanchalanasana",
+    "bhujangasana",
+    "hasta utthanasana",
+    "kumbhakasana",
+    "padahastasana",
+    "pranamasana"
+]
 # Load MoveNet from TensorFlow Hub
 movenet = hub.load("https://tfhub.dev/google/movenet/singlepose/thunder/4")
 movenet_input_size = 256  # model expects 256x256 input
